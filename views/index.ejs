@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY APP</title>
+</head>
+
+<body>
+    <ul class="quotes">
+        <% for(var i=0; i<quotes.length; i++) {%>
+            <li class="quote">
+                <span><%=quotes[i].name %> : </span>
+                <span style="color:red"><%= quotes[i].quote%></span>
+
+            </li>
+            <%}%>
+    </ul>
+
+    <form action="/quotes" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" placeholder="Quote" name="quote">
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <div>
+        <h2>
+            <hr> Replace last quote written by sksharma
+            <hr>
+        </h2>
+
+        <form action="/quotes" method="POST">
+            <input type="text" name="name" placeholder="name">
+            <input type="text" placeholder="Quote" name="quote">
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+
+        <button id="update">Replace</button>
+    </div>
+
+    <div>
+        <hr>
+        <h2>Delete yoda quotes :</h2>
+        <hr>
+        <button id="delete"> Delete</button>
+    </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>
